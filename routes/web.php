@@ -27,5 +27,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('password-change', 'AuthController@passwordChange')->name('passwordChange');
     Route::post('password-change-process', 'AuthController@passwordChangeProcess')->name('passwordChangeProcess');
     Route::get('sign-out', 'AuthController@signOut')->name('signOut');
+    // Route::get('sign-out', 'AuthController@signOut')->name('signOut');
 });
 
