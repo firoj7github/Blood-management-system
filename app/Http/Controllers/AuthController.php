@@ -125,7 +125,7 @@ class AuthController extends Controller
             'old_password.required' => __('Old password can not be empty'),
             'new_password.required' => __('New password can not be empty'),
             'new_password.min' => __('New password must be al least 8 characters'),
-            'confirm_password.required' => __('Confirm password can not be empty'),
+
             'confirm_password.same' => __('New password and confirm password are not same')
         ];
 
@@ -215,7 +215,7 @@ class AuthController extends Controller
         if (empty($latestResetCode) || ($latestResetCode->verification_code != $request->reset_password_code)) {
             return redirect()->back()->with(['error' => __('Your given reset password code is incorrect')]);
         }
-        
+
         if (!empty($passwordResetCode)) {
             $totalDuration = Carbon::now()->diffInMinutes($passwordResetCode->created_at);
             if ($totalDuration > EXPIRE_TIME_OF_FORGET_PASSWORD_CODE) {
