@@ -19,7 +19,6 @@ class CreateSubscriptionPackagesTable extends Migration
             $table->decimal('price', 13, 2);
             $table->integer('number_of_locations')->nullable();
             $table->integer('number_of_calendars')->nullable();
-            $table->tinyInteger('status')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });
